@@ -22,13 +22,13 @@ const sess = {
     secret: 'process.env.SESSION_SECRET',
     cookie: {},
     resave: false,
-    saveUnitialized: true,
+    saveUninitialized: true,
     store: new SequelizeStore({
-        db: sequelize
+        db: sequelize,
     }),
 };
 
-// use session middleware with above
+// use session middleware with above configured options
 app.use(session(sess));
 
 // set the view engine to use Handlebars for rendering templates

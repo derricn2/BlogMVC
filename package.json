@@ -1,4 +1,23 @@
 {
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "blogmvc",
+  "description": "",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/derricn2/BlogMVC.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/derricn2/BlogMVC/issues"
+  },
+  "homepage": "https://github.com/derricn2/BlogMVC#readme",
   "dependencies": {
     "bcrypt": "^5.1.0",
     "connect-session-sequelize": "^7.1.7",
@@ -8,5 +27,5 @@
     "express-session": "^1.17.3",
     "mysql2": "^3.5.2",
     "sequelize": "^6.32.1"
-  }
+}
 }
