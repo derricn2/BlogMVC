@@ -19,8 +19,8 @@ const hbs = exphbs.create({ helpers });
 
 // configure session middleware
 const sess = {
-    secret: 'process.env.SESSION_SECRET',
-    cookie: {},
+    secret: process.env.SESSION_SECRET,
+    cookie: { maxAge: 30000 },
     resave: false,
     saveUninitialized: true,
     store: new SequelizeStore({
