@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>Sign Up</h1>
+
+<!-- Display the error message if it exists -->
+{{#if errorMessage}}
+  <p style="color: red;">{{errorMessage}}</p>
+{{/if}}
+
+<form id="signupForm" action="/api/users/signup" method="POST">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+    <button type="submit" class="btn">Sign Up</button>
+  </form>
+  <script src="/public/js/signup.js"></script>
+
+  <p>Already have an account? <a href="/login">Login</a></p>
+</div>
+

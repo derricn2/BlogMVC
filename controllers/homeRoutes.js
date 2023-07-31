@@ -38,4 +38,19 @@ router.get('/post/:id', async (req, res) => {
     }
 });
 
+// login get route
+router.get('/login', (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
+    res.render('login');
+});
+
+// signup get route
+router.get('/signup', async (req, res) => {
+    res.render('signup');
+})
+
+
 module.exports = router;

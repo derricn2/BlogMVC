@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Welcome to Your Dashboard, {{user.username}}!</h1>
+
+  <a href="/create-post" class="btn">Create New Blog Post</a>
+
+  {{#if user.posts.length}}
+    {{#each user.posts}}
+      <div class="post">
+        <h2 class="post-title">{{title}}</h2>
+        <p class="post-meta">Posted on {{createdAt}}</p>
+        <div class="post-content">{{{content}}}</div>
+        <a href="/edit-post/{{id}}" class="btn">Edit</a>
+        <a href="javascript:void(0)" class="btn" onclick="deletePost('{{id}}')">Delete</a>
+      </div>
+    {{/each}}
+  {{else}}
+    <p>No blog posts found.</p>
+  {{/if}}
+</div>
+
