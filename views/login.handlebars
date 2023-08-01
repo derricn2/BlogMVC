@@ -1,7 +1,12 @@
 <div class="container">
   <h1>Login</h1>
 
-  <form id="loginForm" action="/login" method="POST">
+<!-- Display the error message if it exists -->
+{{#if errorMessage}}
+  <p style="color: red;">{{errorMessage}}</p>
+{{/if}}
+
+  <form id="loginForm" action="/api/users/login" method="POST">
     <div class="form-group">
       <label for="username">Username</label>
       <input type="text" id="username" name="username" required>

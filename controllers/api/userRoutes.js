@@ -65,13 +65,16 @@ router.post('/login', async (req, res) => {
 // route to log out
 router.post('/logout', (req, res) => {
     if (req.session.logged_in) {
-        req.session.destroy(() => {
-            res.status(204).end();
-        });
+      // Destroy the user's session
+      req.session.destroy(() => {
+        // Redirect to the homepage after logout
+        res.redirect('/');
+      });
     } else {
-        res.status(404).end();
+      res.status(400).json({ message: 'You are not logged in.' });
     }
-});
+  });
+  
 
 // example route that requires authentication (Dashboard route)
 router.get('/dashboard', withAuth, async (req, res) => {

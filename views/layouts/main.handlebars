@@ -12,9 +12,9 @@
   <h1>BlogMVC</h1>
   <nav class="navbar">
     <a href="/">Home</a>
-    {{#if isLoggedIn}}
-      <!-- Show the Dashboard and Logout links when the user is logged in -->
       <a href="/dashboard">Dashboard</a>
+    {{#if ifloggedIn}}
+      <!-- Show the Logout links when the user is logged in -->
       <a href="/logout">Logout</a>
     {{else}}
       <!-- Show the Login and Sign Up links when the user is not logged in -->
@@ -32,3 +32,5 @@
 
 </body>
 </html>
+
+<script src="/public/js/logout.js"></script>

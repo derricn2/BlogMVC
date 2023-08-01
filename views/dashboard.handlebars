@@ -1,7 +1,7 @@
 <div class="container">
   <h1>Welcome to Your Dashboard, {{user.username}}!</h1>
 
-  <a href="/create-post" class="btn">Create New Blog Post</a>
+  <a href="/dashboard/create-post" class="btn">Create New Blog Post</a>
 
   {{#if user.posts.length}}
     {{#each user.posts}}

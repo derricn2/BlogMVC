@@ -1,0 +1,26 @@
+<article>
+    <h2>{{post.title}}</h2>
+    <p>Posted by {{post.User.username}} on {{post.createdAt}}</p>
+    <p>{{post.content}}</p>
+</article>
+<hr>
+{{#if post.Comments}}
+    <h3>Comments:</h3>
+    <ul>
+        {{#each post.Comments}}
+            <li>
+                <p>{{this.content}}</p>
+                <p>Comment by {{this.User.username}} on {{this.createdAt}}</p>
+            </li>
+        {{/each}}
+    </ul>
+{{else}}
+    <p>No comments yet.</p>
+{{/if}}
+<form action="/api/comments" method="POST">
+    <label for="comment">Leave a Comment:</label>
+    <textarea id="comment" name="content" required></textarea>
+    <input type="hidden" name="post_id" value="{{post.id}}">
+    <button type="submit">Submit Comment</button>
+</form>
+<a href="/dashboard">Back to Dashboard</a>
